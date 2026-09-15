@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alex Halloran · Healthcare analytics, Phoenix</title>
+<meta name="description" content="Alex Halloran is a medical economics analyst in Phoenix. Value-based care analytics, claims data engineering, automation, and graduate health informatics teaching.">
+<link rel="canonical" href="https://alexhalloran.traqqit.com/">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://alexhalloran.traqqit.com/">
+<meta property="og:title" content="Alex Halloran · Healthcare analytics, Phoenix">
+<meta property="og:description" content="I turn messy healthcare data into numbers people can act on. Medical economics, value-based care, data engineering, and small useful software.">
+<meta property="og:site_name" content="Alex Halloran">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#f4efe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120f" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script>/* set theme before first paint so there is no flash */
+try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Roboto+Mono&display=swap">
+<link rel="stylesheet" href="assets/css/main.css">
+<script src="assets/js/main.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Alexander Halloran","alternateName":"Alex Halloran",
+"url":"https://alexhalloran.traqqit.com/","email":"mailto:alex@datahoundtech.com","jobTitle":"Medical Economics Analyst",
+"worksFor":{"@type":"Organization","name":"HOPCo"},
+"address":{"@type":"PostalAddress","addressLocality":"Phoenix","addressRegion":"AZ","addressCountry":"US"},
+"alumniOf":{"@type":"CollegeOrUniversity","name":"Arizona State University"},
+"sameAs":["https://www.linkedin.com/in/alex-halloran/","https://datahoundtech.com","https://traqqit.com"]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="wordmark" href="/">Alex Halloran</a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav-links" class="nav-links" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#writing">Writing</a>
+      <a href="resume.html">Resume</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">
+        <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero wrap" aria-labelledby="hero-h">
+  <div class="hero-copy">
+    <p class="eyebrow">Healthcare analytics · Phoenix, AZ</p>
+    <h1 id="hero-h">I turn messy healthcare data into numbers people can act on.</h1>
+    <p class="lede">Medical economics analyst at HOPCo, founder of Data Hound Technologies, adjunct in health informatics at GCU.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:alex@datahoundtech.com?subject=Let's%20talk">Talk through a problem</a>
+      <!-- TODO: resume PDF — point this at assets/resume/Alex_Halloran_Resume.pdf once the file exists -->
+      <a class="btn btn-secondary" href="resume.html">View resume</a>
+    </div>
+  </div>
+
+  <div class="device" aria-label="Interactive terminal">
+    <div class="device-bar">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="device-title">alex@traqqit ~</span>
+    </div>
+    <div class="term" id="term">
+      <div class="term-out" id="term-out" aria-live="polite"></div>
+      <form class="term-line" id="term-form" autocomplete="off">
+        <label for="term-in" class="prompt">$ </label>
+        <input id="term-in" class="term-in" type="text" spellcheck="false" autocapitalize="off" aria-label="Terminal command, type help for a list">
+        <span class="cursor" aria-hidden="true"></span>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- What I do -->
+<section class="section wrap" id="services" aria-labelledby="services-h">
+  <header class="section-head">
+    <p class="eyebrow">What I do</p>
+    <h2 id="services-h">Four things, done carefully.</h2>
+    <p class="lede">Most engagements are some mix of these. The common thread is claims data, real money, and an audience that needs a straight answer.</p>
+  </header>
+  <div class="grid grid-2">
+    <article class="card">
+      <h3>Medical economics and VBC analytics</h3>
+      <p>PMPM trend, capitation and shared-savings modeling, risk stratification, attribution, bundled-payment analysis, HEDIS and quality reporting.</p>
+    </article>
+    <article class="card">
+      <h3>Data engineering for analysts</h3>
+      <p>SQL Server and Snowflake ETL, DuckDB and Parquet pipelines, Python automation, Power BI and Tableau delivery.</p>
+    </article>
+    <article class="card">
+      <h3>Automation and small software</h3>
+      <p>n8n workflows, Flask and FastAPI services, Raspberry Pi and Docker deployments, digital signage.</p>
+    </article>
+    <article class="card">
+      <h3>Teaching and translation</h3>
+      <p>Graduate health informatics instruction, and explaining analytics to clinical, operations, and finance audiences.</p>
+    </article>
+  </div>
+</section>
+
+<!-- Selected work -->
+<section class="section wrap" id="work" aria-labelledby="work-h">
+  <header class="section-head">
+    <p class="eyebrow">Selected work</p>
+    <h2 id="work-h">Real projects, described plainly.</h2>
+    <p class="lede">Public tools and consulting work I can talk about. Employer analytics stay at the employer.</p>
+  </header>
+  <div class="grid grid-work">
+
+    <article class="card work">
+      <h3><a href="https://healthcare.traqqit.com" rel="noopener">Healthcare Price Transparency</a></h3>
+      <p class="tag">Public hospital rate lookup · healthcare.traqqit.com</p>
+      <dl>
+        <dt>Problem</dt><dd>Hospital negotiated-rate files (machine-readable MRF data) are huge and unusable for a patient or a small practice trying to compare prices.</dd>
+        <dt>Built</dt><dd>A DuckDB and Parquet pipeline that ingests and normalizes negotiated rates, with a FastAPI backend and a web front end for looking up rates by procedure and payer (initial focus: Anthem PPO).</dd>
+        <dt>Outcome</dt><dd>A working public lookup tool, and the groundwork for an <a href="https://ortho.traqqit.com" rel="noopener">orthopedics-focused variant</a>.</dd>
+      </dl>
+      <ul class="badges"><li>Python</li><li>DuckDB</li><li>Parquet</li><li>FastAPI</li><li>Hostinger</li></ul>
+    </article>
+
+    <article class="card work">
+      <h3>PSP Browser</h3>
+      <!-- TODO: pspbrowser.traqqit.com is not resolving yet; add the link once it is live -->
+      <p class="tag">Modern web on a 2004 handheld · pspbrowser.traqqit.com (TODO: link when live)</p>
+      <dl>
+        <dt>Problem</dt><dd>The PlayStation Portable's built-in browser can't render the modern web.</dd>
+        <dt>Built</dt><dd>A Python/Flask proxy on a Raspberry Pi that fetches, simplifies, and re-serves pages the PSP can render, plus a public site with a one-line <code>curl | bash</code> installer, a systemd unit, and a setup guide.</dd>
+        <dt>Outcome</dt><dd>Anyone with a Pi can stand up a working PSP browser in minutes. Deployed on Hostinger using the same traqqit.com pattern as this site.</dd>
+      </dl>
+      <ul class="badges"><li>Flask</li><li>Raspberry Pi</li><li>systemd</li><li>Hostinger</li></ul>
+    </article>
+
+    <article class="card work">
+      <h3>House-wide CO₂ monitoring</h3>
+      <p class="tag">Homelab · sensors to dashboards</p>
+      <dl>
+        <dt>Problem</dt><dd>No visibility into indoor air quality across rooms, and a home internet connection behind CGNAT that blocks normal self-hosting.</dd>
+        <dt>Built</dt><dd>ESP32-C3 and SCD41 sensor nodes on ESPHome and MQTT feeding InfluxDB and Grafana, all in Docker Compose on a Raspberry Pi 4B. Tailscale for private access, Cloudflare Tunnels for public hosting, MikroTik routing.</dd>
+        <dt>Outcome</dt><dd>Continuous room-level CO₂ dashboards and a reusable hosting pattern for other side projects.</dd>
+      </dl>
+      <ul class="badges"><li>ESPHome</li><li>MQTT</li><li>InfluxDB</li><li>Grafana</li><li>Docker</li><li>Tailscale</li><li>Cloudflare</li></ul>
+    </article>
+
+    <article class="card work">
+      <h3>Medical bill review automation</h3>
+      <p class="tag">Data Hound Technologies · intake pipeline</p>
+      <dl>
+        <dt>Problem</dt><dd>Reviewing and negotiating medical bills is manual: read the bill, pull the codes, check them against expected rates, draft the dispute.</dd>
+        <dt>Built</dt><dd>n8n workflows with OCR that extract line items from uploaded bills and stage them for review and negotiation.</dd>
+        <dt>Outcome</dt><dd>A repeatable intake-to-review pipeline for the bill negotiation service. <span class="todo">TODO: one sentence on results, if wanted</span></dd>
+      </dl>
+      <ul class="badges"><li>n8n</li><li>OCR</li><li>Python</li></ul>
+    </article>
+
+    <article class="card work">
+      <h3>Digital signage for pickleball clubs</h3>
+      <p class="tag">Data Hound Technologies · managed service</p>
+      <dl>
+        <dt>Problem</dt><dd>Franchise locations need court schedules, league flyers, and hours on screens without staff managing content by hand.</dd>
+        <dt>Built</dt><dd>A Yodeck-based managed signage service: configured players, content templates, remote updates, annual contract.</dd>
+        <dt>Outcome</dt><dd>Live at franchise locations under a managed annual agreement.</dd>
+      </dl>
+      <ul class="badges"><li>Yodeck</li><li>Managed service</li></ul>
+    </article>
+
+  </div>
+</section>
+
+<!-- References: hidden until at least one quote with name + role is supplied -->
+<!-- TODO: testimonials — fill a .quote card below and remove the hidden attribute -->
+<section class="section wrap" id="references" aria-labelledby="refs-h" hidden>
+  <header class="section-head">
+    <p class="eyebrow">References</p>
+    <h2 id="refs-h">What people I've worked with say.</h2>
+  </header>
+  <div class="grid grid-2">
+    <blockquote class="card quote">
+      <p>TODO: quote</p>
+      <footer><cite>TODO: name</cite>, TODO: role</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- About + timeline -->
+<section class="section wrap" id="about" aria-labelledby="about-h">
+  <header class="section-head">
+    <p class="eyebrow">About</p>
+    <h2 id="about-h">Analyst first, builder second, teacher on Tuesdays.</h2>
+  </header>
+  <div class="about">
+    <div class="about-copy">
+      <!-- TODO: headshot — drop assets/img/headshot.jpg in place of this placeholder -->
+      <div class="headshot" role="img" aria-label="Headshot placeholder"><span>headshot</span></div>
+      <p>I'm a healthcare data analyst in Phoenix. By day I do medical economics at HOPCo, a musculoskeletal value-based care company. Before that I worked on ACO performance and population health at OnBelay Health Solutions, Equality Health, and ACO Partner, mostly in SQL, Python, and Power BI, mostly on claims.</p>
+      <p>On the side I run Data Hound Technologies, teach graduate health informatics at Grand Canyon University, and build small tools that live at <a href="https://traqqit.com" rel="noopener">traqqit.com</a>. I like problems where the data is messy, the money is real, and someone has to explain the answer to a non-technical room.</p>
+    </div>
+    <ol class="timeline" aria-label="Career timeline">
+      <li><span class="when">2026 – present</span><strong>HOPCo</strong> Medical Economics Analyst</li>
+      <li><span class="when">TODO: start year – present</span><strong>Grand Canyon University</strong> Adjunct Instructor, Health Informatics (HIM-650, HCI-690; previously HIM-615)</li>
+      <li><span class="when">TODO: start year – present</span><strong>Data Hound Technologies</strong> Founder. Analytics and automation consulting, mostly healthcare.</li>
+      <li><span class="when">TODO: years</span><strong>Pickleball Kingdom</strong> Technology Director. POS, member management, court reservations, KPI reporting, franchise tech support. <span class="todo">TODO: confirm still current</span></li>
+      <li><span class="when">TODO: years</span><strong>OnBelay Health Solutions</strong> Senior Business Analyst. Actuarial dashboards, capitation modeling, risk stratification with claims and ADT data.</li>
+      <li><span class="when">TODO: years</span><strong>Equality Health</strong> Population Health Analyst. HEDIS automation, value-based payment modeling, stratified reporting on Arizona Medicare contracts.</li>
+      <li><span class="when">TODO: years</span><strong>ACO Partner</strong> <span class="todo">TODO: title.</span> Shared-savings financial modeling.</li>
+      <li><span class="when">TODO: year</span><strong>Arizona State University</strong> MS, Biomedical Informatics</li>
+    </ol>
+  </div>
+</section>
+
+<!-- Skills -->
+<section class="section wrap" id="skills" aria-labelledby="skills-h">
+  <header class="section-head">
+    <p class="eyebrow">Skills</p>
+    <h2 id="skills-h">The stack I actually use.</h2>
+  </header>
+  <div class="skills">
+    <div class="skill-group"><h3>Data</h3>
+      <ul class="badges"><li>SQL (T-SQL, PostgreSQL, MySQL)</li><li>Python</li><li>R</li><li>DAX</li><li>DuckDB</li><li>Parquet</li></ul></div>
+    <div class="skill-group"><h3>Platforms</h3>
+      <ul class="badges"><li>SQL Server</li><li>Snowflake</li><li>Databricks</li><li>Epic Clarity / Caboodle</li><li>Power BI</li><li>Tableau</li></ul></div>
+    <div class="skill-group"><h3>Build</h3>
+      <ul class="badges"><li>Flask</li><li>FastAPI</li><li>n8n</li><li>Docker</li><li>GitHub Actions</li><li>Raspberry Pi</li><li>Grafana</li><li>InfluxDB</li><li>ESPHome / MQTT</li><li>Tailscale</li><li>Cloudflare Tunnels</li></ul></div>
+    <div class="skill-group"><h3>Domain</h3>
+      <ul class="badges"><li>ACO / MSSP</li><li>Medicare Advantage</li><li>HEDIS</li><li>Risk adjustment</li><li>Capitation</li><li>Bundled payments</li><li>Price transparency (MRF data)</li></ul></div>
+  </div>
+</section>
+
+<!-- Writing -->
+<section class="section wrap" id="writing" aria-labelledby="writing-h">
+  <header class="section-head">
+    <p class="eyebrow">Writing</p>
+    <h2 id="writing-h">Writing</h2>
+    <p class="lede">I write a newsletter called Serendipity Sundays.</p>
+  </header>
+  <!-- TODO: Substack URL -->
+  <a class="btn btn-primary" href="#writing" data-todo="Substack URL">Read on Substack</a>
+</section>
+
+<!-- Contact -->
+<section class="section wrap" id="contact" aria-labelledby="contact-h">
+  <header class="section-head">
+    <p class="eyebrow">Contact</p>
+    <h2 id="contact-h">The fastest way to reach me is email.</h2>
+  </header>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="mailto:alex@datahoundtech.com?subject=Let's%20talk">alex@datahoundtech.com</a>
+  </div>
+  <p class="links"><a href="https://www.linkedin.com/in/alex-halloran/" rel="noopener">LinkedIn</a> · <a href="https://datahoundtech.com" rel="noopener">datahoundtech.com</a></p>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <span>© <span id="year">2026</span> Alex Halloran</span>
+    <a href="https://traqqit.com" rel="noopener">Part of traqqit.com</a>
+  </div>
+</footer>
+</body>
+</html>

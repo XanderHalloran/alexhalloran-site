@@ -1,0 +1,23 @@
+# Push to main -> rsync site/ into /root/alexhalloran on the traqqit VPS.
+# The VPS has no FTP server (it is a Docker + Caddy box), so this uses the same
+# restricted write-only rsync deploy key pattern as traqqit-home instead of FTP.
+# Secret required: DEPLOY_SSH_KEY (private key whose public half is locked to
+# `rrsync -wo /root/alexhalloran` in the VPS authorized_keys). See README.md.
+name: deploy
+on:
+  push:
+    branches: [main]
+    paths: ['site/**', '.github/workflows/deploy.yml']
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install key and pin host
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+          ssh-keyscan -H 85.31.233.230 >> ~/.ssh/known_hosts
+      - name: rsync site/
+        run: rsync -az --delete -e "ssh -i ~/.ssh/deploy" site/ root@85.31.233.230:/
