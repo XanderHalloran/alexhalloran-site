@@ -57,7 +57,7 @@
       'domain    aco/mssp, medicare advantage, hedis, risk adjustment, capitation, bundles, mrf'
     ].join('\n'),
     teach: 'Grand Canyon University, graduate health informatics.\nHIM-650, HCI-690. Previously HIM-615.',
-    contact: 'email     alex@datahoundtech.com\nlinkedin  linkedin.com/in/alex-halloran'
+    contact: 'email     alex@datahoundtech.com\nlinkedin  linkedin.com/in/alex-halloran\ngithub    github.com/XanderHalloran\nsubstack  alexhalloran.substack.com'
   };
 
   function print(text, cls) {
