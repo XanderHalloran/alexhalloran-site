@@ -248,9 +248,15 @@ try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.docu
       <p>Career changes, Spanish learning, art, and Bitcoin.</p>
     </a>
   </div>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="https://alexhalloran.substack.com" rel="noopener">Read on Substack</a>
-  </div>
+  <!-- Native GET form: lands on Substack's hosted subscribe page with the email prefilled. No script, no iframe. -->
+  <form class="subscribe" method="get" action="https://alexhalloran.substack.com/subscribe">
+    <label for="sub-email">Get new posts by email</label>
+    <div class="subscribe-row">
+      <input id="sub-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" inputmode="email">
+      <button class="btn btn-primary" type="submit">Subscribe</button>
+    </div>
+    <p class="note">Free. One click to confirm on Substack. <a href="https://alexhalloran.substack.com" rel="noopener">Read the archive first</a> if you'd rather.</p>
+  </form>
 </section>
 
 <!-- Contact -->

@@ -140,6 +140,15 @@ code { font-family: var(--mono); font-size: 0.9em; }
 .post:hover h3 { text-decoration: underline; text-underline-offset: 3px; }
 .post p { font-size: 15px; color: var(--ink-muted); }
 
+/* subscribe (writing) */
+.subscribe { max-width: 520px; }
+.subscribe label { display: block; font-family: var(--head); font-weight: 500; margin-bottom: 8px; }
+.subscribe-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.subscribe input { flex: 1 1 220px; min-width: 0; padding: 12px 14px; font: inherit; font-size: 16px; color: var(--ink);
+  background: var(--bg-elev); border: 1px solid var(--line); border-radius: var(--r); }
+.subscribe input::placeholder { color: var(--ink-muted); }
+.subscribe .note { margin-top: 12px; }
+
 /* recommendations */
 .recs { margin-top: 48px; }
 .recs h2 { font-size: clamp(22px, 3vw, 28px); padding-bottom: 8px; border-bottom: 1px solid var(--line); }
