@@ -140,6 +140,17 @@ code { font-family: var(--mono); font-size: 0.9em; }
 .post:hover h3 { text-decoration: underline; text-underline-offset: 3px; }
 .post p { font-size: 15px; color: var(--ink-muted); }
 
+/* recommendations */
+.recs { margin-top: 48px; }
+.recs h2 { font-size: clamp(22px, 3vw, 28px); padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.rec-list { list-style: none; margin: 0; padding: 0; }
+.rec-list li { padding: 16px 0; border-bottom: 1px solid var(--ink-muted); }
+.rec-list li:last-child { border-bottom: 0; }
+.rec-list h3 { font-size: 18px; margin-bottom: 4px; }
+.rec-list p { font-size: 15px; margin: 0; color: var(--ink-muted); }
+.ref { font-family: var(--mono); font-size: 12px; font-weight: 400; padding: 2px 8px; border: 1px solid var(--line); border-radius: 999px; vertical-align: middle; margin-left: 6px; }
+.note { font-size: 14px; color: var(--ink-muted); margin-top: 24px; }
+
 /* footer */
 .footer { border-top: 1px solid var(--line); padding-block: 24px; font-size: 14px; color: var(--ink-muted); }
 .footer-in { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
