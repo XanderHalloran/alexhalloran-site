@@ -55,13 +55,16 @@ scp -i ~/.ssh/hostinger_travelmap -r site/* root@85.31.233.230:/root/alexhallora
 `.github/workflows/deploy.yml` rsyncs `site/` to the VPS on every push to `main`. The VPS has no FTP,
 so this uses a write-only rsync SSH key instead of the FTP action the original brief suggested.
 
-One-time setup:
+This is set up and working (repo: github.com/XanderHalloran/alexhalloran-site, private). Push to `main` and the
+site is live within about a minute. Check the run under the Actions tab if something looks stale.
 
-1. Create a GitHub repo for this folder and push it.
-2. Generate a deploy key pair: `ssh-keygen -t ed25519 -f deploy_alexhalloran -N "" -C deploy-alexhalloran`.
-3. On the VPS, append the public key to `/root/.ssh/authorized_keys` with the restriction prefix
-   `command="/usr/bin/rrsync -wo /root/alexhalloran",restrict ` so the key can only write into that one directory.
-4. Add the private key as the Actions secret `DEPLOY_SSH_KEY` (`gh secret set DEPLOY_SSH_KEY < deploy_alexhalloran`).
-5. Push to `main` or run the workflow from the Actions tab.
+What was set up (repeat only if the key is ever rotated):
 
-Never commit the private key. It is not in this repo.
+1. A deploy key pair, `deploy-alexhalloran`. The public half is in the VPS `/root/.ssh/authorized_keys` with the prefix
+   `command="/usr/bin/rrsync -wo /root/alexhalloran",restrict`, so it can only write into that one directory.
+2. The private half is the Actions secret `DEPLOY_SSH_KEY`. It is not stored anywhere else.
+
+To rotate: `ssh-keygen -t ed25519 -f deploy_alexhalloran -N "" -C deploy-alexhalloran`, replace the line in
+`authorized_keys`, then `gh secret set DEPLOY_SSH_KEY < deploy_alexhalloran` and delete the local file.
+
+Never commit the private key.
