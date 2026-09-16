@@ -47,8 +47,6 @@
     whoami: 'Alex Halloran. Medical economics analyst in Phoenix, AZ.\nClaims, contracts, and the code that connects them. Also: Data Hound Technologies, GCU adjunct.',
     work: [
       'healthcare price transparency   #work  (healthcare.traqqit.com)',
-      'psp browser                     #work',
-      'house-wide co2 monitoring       #work',
       'medical bill review automation  #work',
       'digital signage for clubs       #work'
     ].join('\n'),

@@ -132,28 +132,7 @@ try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.docu
       <ul class="badges"><li>Python</li><li>DuckDB</li><li>Parquet</li><li>FastAPI</li><li>Hostinger</li></ul>
     </article>
 
-    <article class="card work">
-      <h3>PSP Browser</h3>
-      <!-- TODO: pspbrowser.traqqit.com is not resolving yet; add the link once it is live -->
-      <p class="tag">Modern web on a 2004 handheld · pspbrowser.traqqit.com (TODO: link when live)</p>
-      <dl>
-        <dt>Problem</dt><dd>The PlayStation Portable's built-in browser can't render the modern web.</dd>
-        <dt>Built</dt><dd>A Python/Flask proxy on a Raspberry Pi that fetches, simplifies, and re-serves pages the PSP can render, plus a public site with a one-line <code>curl | bash</code> installer, a systemd unit, and a setup guide.</dd>
-        <dt>Outcome</dt><dd>Anyone with a Pi can stand up a working PSP browser in minutes. Deployed on Hostinger using the same traqqit.com pattern as this site.</dd>
-      </dl>
-      <ul class="badges"><li>Flask</li><li>Raspberry Pi</li><li>systemd</li><li>Hostinger</li></ul>
-    </article>
 
-    <article class="card work">
-      <h3>House-wide CO₂ monitoring</h3>
-      <p class="tag">Homelab · sensors to dashboards</p>
-      <dl>
-        <dt>Problem</dt><dd>No visibility into indoor air quality across rooms, and a home internet connection behind CGNAT that blocks normal self-hosting.</dd>
-        <dt>Built</dt><dd>ESP32-C3 and SCD41 sensor nodes on ESPHome and MQTT feeding InfluxDB and Grafana, all in Docker Compose on a Raspberry Pi 4B. Tailscale for private access, Cloudflare Tunnels for public hosting, MikroTik routing.</dd>
-        <dt>Outcome</dt><dd>Continuous room-level CO₂ dashboards and a reusable hosting pattern for other side projects.</dd>
-      </dl>
-      <ul class="badges"><li>ESPHome</li><li>MQTT</li><li>InfluxDB</li><li>Grafana</li><li>Docker</li><li>Tailscale</li><li>Cloudflare</li></ul>
-    </article>
 
     <article class="card work">
       <h3>Medical bill review automation</h3>
