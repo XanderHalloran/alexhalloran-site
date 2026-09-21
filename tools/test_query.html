@@ -14,24 +14,37 @@
 <script>
 var CASES = [
   // [query, substring that must appear in the output, substring that must NOT]
-  ['help', 'select <cols|*> from <table>', null],
+  ['help', 'select * from skills where category = domain', null],
   ['.tables', 'projects  roles  education  skills  posts', null],
   ['.schema roles', 'roles (org, title, years, sort_key)', null],
   ['select school, degree from education', 'Arizona State University', null],
-  ["select name from skills where category = 'Languages'", 'German (B1)', 'Python'],
-  ['.schema nope', 'no such table: nope', null],
+  ['.schema nope', 'there is no table called "nope"', null],
   ['describe alex', 'Medical economics at HOPCo', null],
   ['whoami', 'Medical economics at HOPCo', null],
   ['select * from projects', 'Healthcare Price Transparency', null],
   ['select name from projects', '(3 rows)', 'DuckDB'],
-  ["select name from skills where category = 'Domain'", 'HEDIS', 'Snowflake'],
-  ["select org from roles where org like '%health%'", 'OnBelay Health Solutions', 'HOPCo'],
-  ['select org from roles order by sort_key desc limit 1', 'ACO Partner', 'HOPCo'],
   ['select title from posts limit 2', '(2 rows)', null],
-  ['select * from salaries', 'no such table: salaries', null],
-  ['select ssn from roles', 'no such column: ssn', null],
-  ['drop table roles', 'not a bio.db command', null],
-  ['select', 'syntax:', null]
+  ['select * from salaries', 'there is no table called "salaries"', null],
+  ['select ssn from roles', '"ssn" is not a column in roles', null],
+  ['drop table roles', 'is not something bio.db understands', null],
+  ['select', 'I could not read that', null],
+  // quoted values still work, unquoted ones now work too
+  ["select name from skills where category = 'Languages'", 'German (B1)', 'Python'],
+  ['select name from skills where category = domain', 'HEDIS', 'Snowflake'],
+  ['SELECT Name FROM Skills WHERE Category = Domain', 'HEDIS', 'Snowflake'],
+  ["select org from roles where org like '%health%'", 'OnBelay Health Solutions', 'HOPCo'],
+  ['select name from projects where problem contains bills', 'Medical bill review automation', 'Digital signage'],
+  ['select org from roles where org != HOPCo', '(6 rows)', null],
+  ['select org from roles order by sort_key desc limit 1', 'ACO Partner', 'HOPCo'],
+  // plain words, for visitors who do not write sql
+  ['projects', 'Healthcare Price Transparency', null],
+  ['show tables', 'projects  roles  education  skills  posts', null],
+  ['about', 'Medical economics at HOPCo', null],
+  ['schema posts', 'posts (title, url)', null],
+  ['list skills', '(35 rows)', null],
+  ['select * from projects;', 'Healthcare Price Transparency', null],
+  ['  select * from   projects  ', 'Healthcare Price Transparency', null],
+  ['select name from skills where category = nothing', 'no rows matched', null]
 ];
 function run(q) {
   var out = document.getElementById('db-out');

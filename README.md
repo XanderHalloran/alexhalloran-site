@@ -23,13 +23,20 @@ Open http://localhost:8000. The `/#work` style anchors and `resume.html` both wo
 
 ### bio.db pane
 
-The hero device is a read-only query pane, not a shell. It parses an allowlist against `bio.json` with no `eval`
-and no `Function()`: `help`, `.tables`, `.schema <table>`, `describe alex` (`whoami` is a synonym), `clear`, and
-`select <cols|*> from <table> [where col = 'x' | col like '%x%'] [order by col [asc|desc]] [limit n]`.
-One table per query, no joins. Anything else prints an error.
+The hero device is a read-only query pane, not a shell. The box starts with a working query and a Run button,
+so a visitor never has to type anything; the example lines run on click. It parses an allowlist against
+`bio.json` with no `eval` and no `Function()`:
+
+- `help`, `.tables`, `.schema <table>`, `describe alex`, `clear`
+- `select <cols|*> from <table> [where col (= | != | like | contains) value] [order by col [asc|desc]] [limit n]`
+- plain words for non-technical visitors: a bare table name reads the whole table, and `show tables`,
+  `schema posts`, `list skills`, `about`, and `whoami` all map onto the commands above
+
+Quotes around values are optional, case is ignored, and a trailing semicolon is fine. One table per query, no
+joins, no writes. Anything else prints a plain-language error naming the tables or columns that do exist.
 
 To run the check: serve the repo root (`python3 -m http.server 8000`) and open
-`http://localhost:8000/tools/test_query.html`. Green heading means all cases passed.
+`http://localhost:8000/tools/test_query.html`. Green heading means all 29 cases passed.
 - `site/assets/img/headshot.jpg` — TODO, placeholder box shown until present
 - `site/assets/resume/Alex_Halloran_Resume.pdf` — TODO, "View resume" falls back to `resume.html`
 - `_old/` — the earlier dark single-file draft, kept for reference only

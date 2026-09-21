@@ -64,24 +64,23 @@ try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.docu
     <p class="lede">Medical economics analyst at HOPCo, founder of Data Hound Technologies, adjunct in health informatics at GCU.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="mailto:alex@datahoundtech.com?subject=Let's%20talk">Talk through a problem</a>
-      <!-- TODO: resume PDF — point this at assets/resume/Alex_Halloran_Resume.pdf once the file exists -->
       <a class="btn btn-secondary" href="resume.html">View resume</a>
     </div>
   </div>
 
   <div class="device" aria-label="bio.db query pane">
     <div class="device-bar">
-      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-      <span class="device-title">alex@traqqit · bio.db</span>
+      <span class="device-title">alex@traqqit &middot; bio.db</span>
     </div>
     <div class="db" id="db">
       <div class="db-out" id="db-out" aria-live="polite"></div>
-      <form class="db-line" id="db-form" autocomplete="off">
-        <label for="db-in" class="prompt">sql&gt; </label>
-        <input id="db-in" class="db-in" type="text" spellcheck="false" autocapitalize="off" aria-label="Query bio.db, type help for the list of commands">
-        <span class="cursor" aria-hidden="true"></span>
-      </form>
     </div>
+    <form class="db-line" id="db-form" autocomplete="off">
+      <label for="db-in" class="prompt">sql&gt;</label>
+      <input id="db-in" class="db-in" type="text" spellcheck="false" autocapitalize="off" autocorrect="off"
+             value="select * from projects" aria-label="Query. Edit it and press Run, or type help.">
+      <button class="db-run" type="submit">Run</button>
+    </form>
   </div>
 </section>
 
@@ -140,7 +139,7 @@ try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.docu
       <dl>
         <dt>Problem</dt><dd>Reviewing and negotiating medical bills is manual: read the bill, pull the codes, check them against expected rates, draft the dispute.</dd>
         <dt>Built</dt><dd>n8n workflows with OCR that extract line items from uploaded bills and stage them for review and negotiation.</dd>
-        <dt>Outcome</dt><dd>A repeatable intake-to-review pipeline for the bill negotiation service. <span class="todo">TODO: one sentence on results, if wanted</span></dd>
+        <dt>Outcome</dt><dd>A repeatable intake-to-review pipeline for the bill negotiation service.</dd>
       </dl>
       <ul class="badges"><li>n8n</li><li>OCR</li><li>Python</li></ul>
     </article>
@@ -159,21 +158,6 @@ try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.docu
   </div>
 </section>
 
-<!-- References: hidden until at least one quote with name + role is supplied -->
-<!-- TODO: testimonials — fill a .quote card below and remove the hidden attribute -->
-<section class="section wrap" id="references" aria-labelledby="refs-h" hidden>
-  <header class="section-head">
-    <p class="eyebrow">References</p>
-    <h2 id="refs-h">What people I've worked with say.</h2>
-  </header>
-  <div class="grid grid-2">
-    <blockquote class="card quote">
-      <p>TODO: quote</p>
-      <footer><cite>TODO: name</cite>, TODO: role</footer>
-    </blockquote>
-  </div>
-</section>
-
 <!-- About + timeline -->
 <section class="section wrap" id="about" aria-labelledby="about-h">
   <header class="section-head">
@@ -182,8 +166,7 @@ try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.docu
   </header>
   <div class="about">
     <div class="about-copy">
-      <!-- TODO: headshot — drop assets/img/headshot.jpg in place of this placeholder -->
-      <div class="headshot" role="img" aria-label="Headshot placeholder"><span>headshot</span></div>
+      <p class="headshot" aria-hidden="true">AH</p>
       <p>I'm a healthcare data analyst in Phoenix. By day I do medical economics at HOPCo, a musculoskeletal value-based care company. Before that I worked on ACO performance and population health at OnBelay Health Solutions, Equality Health, and ACO Partner, mostly in SQL, Python, and Power BI, mostly on claims.</p>
       <p>On the side I run Data Hound Technologies, teach graduate health informatics at Grand Canyon University, and build small tools that live at <a href="https://traqqit.com" rel="noopener">traqqit.com</a>. I like problems where the data is messy, the money is real, and someone has to explain the answer to a non-technical room.</p>
     </div>
@@ -191,7 +174,7 @@ try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.docu
       <li><span class="when">2026 – present</span><strong>HOPCo</strong> Medical Economics Analyst</li>
       <li><span class="when">Apr 2025 – present</span><strong>Grand Canyon University</strong> Adjunct Graduate Faculty, Health Informatics (HIM-650, HCI-690; previously HIM-615)</li>
       <li><span class="when">Oct 2024 – present</span><strong>Data Hound Technologies</strong> Founder and business solution architect. Analytics and automation consulting, mostly healthcare.</li>
-      <li><span class="when">TODO: years</span><strong>Pickleball Kingdom</strong> Technology Director. POS, member management, court reservations, KPI reporting, franchise tech support. <span class="todo">TODO: not on the resume; confirm dates</span></li>
+      <li><strong>Pickleball Kingdom</strong> Technology Director. POS, member management, court reservations, KPI reporting, franchise tech support.</li>
       <li><span class="when">Feb 2023 – Oct 2024</span><strong>OnBelay Health Solutions</strong> Senior Business Analyst. Actuarial dashboards, capitation modeling, risk stratification with claims and ADT data.</li>
       <li><span class="when">Jan 2020 – Jan 2023</span><strong>Equality Health</strong> Population Health Analyst. HEDIS automation, value-based payment modeling, stratified reporting on Arizona Medicare contracts.</li>
       <li><span class="when">Jun 2016 – Dec 2019</span><strong>ACO Partner</strong> Business Intelligence Analyst III. Shared-savings financial modeling and a referral network built on longitudinal claims analysis.</li>
