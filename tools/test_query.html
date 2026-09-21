@@ -15,8 +15,10 @@
 var CASES = [
   // [query, substring that must appear in the output, substring that must NOT]
   ['help', 'select <cols|*> from <table>', null],
-  ['.tables', 'projects  roles  skills  posts', null],
-  ['.schema roles', 'roles (org, title, sort_key)', null],
+  ['.tables', 'projects  roles  education  skills  posts', null],
+  ['.schema roles', 'roles (org, title, years, sort_key)', null],
+  ['select school, degree from education', 'Arizona State University', null],
+  ["select name from skills where category = 'Languages'", 'German (B1)', 'Python'],
   ['.schema nope', 'no such table: nope', null],
   ['describe alex', 'Medical economics at HOPCo', null],
   ['whoami', 'Medical economics at HOPCo', null],

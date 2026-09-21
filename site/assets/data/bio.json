@@ -5,13 +5,17 @@
     {"name": "Digital signage for pickleball clubs", "problem": "Franchise locations need court schedules, league flyers, and hours on screens without staff managing content by hand.", "stack": "Yodeck, managed service", "url": ""}
   ],
   "roles": [
-    {"org": "HOPCo", "title": "Medical Economics Analyst", "sort_key": 1},
-    {"org": "Grand Canyon University", "title": "Adjunct Instructor, Health Informatics", "sort_key": 2},
-    {"org": "Data Hound Technologies", "title": "Founder", "sort_key": 3},
-    {"org": "Pickleball Kingdom", "title": "Technology Director", "sort_key": 4},
-    {"org": "OnBelay Health Solutions", "title": "Senior Business Analyst", "sort_key": 5},
-    {"org": "Equality Health", "title": "Population Health Analyst", "sort_key": 6},
-    {"org": "ACO Partner", "title": "Shared-savings financial modeling", "sort_key": 7}
+    {"org": "HOPCo", "title": "Medical Economics Analyst", "years": "2026 - present", "sort_key": 1},
+    {"org": "Grand Canyon University", "title": "Adjunct Graduate Faculty, Health Informatics", "years": "Apr 2025 - present", "sort_key": 2},
+    {"org": "Data Hound Technologies", "title": "Founder and Business Solution Architect", "years": "Oct 2024 - present", "sort_key": 3},
+    {"org": "Pickleball Kingdom", "title": "Technology Director", "years": "", "sort_key": 4},
+    {"org": "OnBelay Health Solutions", "title": "Senior Business Analyst", "years": "Feb 2023 - Oct 2024", "sort_key": 5},
+    {"org": "Equality Health", "title": "Population Health Analyst", "years": "Jan 2020 - Jan 2023", "sort_key": 6},
+    {"org": "ACO Partner", "title": "Business Intelligence Analyst III", "years": "Jun 2016 - Dec 2019", "sort_key": 7}
+  ],
+  "education": [
+    {"school": "Arizona State University", "degree": "MS, Biomedical Informatics", "years": "Aug 2015 - Dec 2016"},
+    {"school": "Southern Illinois University Edwardsville", "degree": "BS, Biological Sciences", "years": "Aug 2011 - May 2015"}
   ],
   "skills": [
     {"name": "SQL (T-SQL, PostgreSQL, MySQL)", "category": "Data"},
@@ -20,6 +24,7 @@
     {"name": "DAX", "category": "Data"},
     {"name": "DuckDB", "category": "Data"},
     {"name": "Parquet", "category": "Data"},
+    {"name": "Data warehouse design", "category": "Data"},
     {"name": "SQL Server", "category": "Platforms"},
     {"name": "Snowflake", "category": "Platforms"},
     {"name": "Databricks", "category": "Platforms"},
@@ -43,7 +48,11 @@
     {"name": "Risk adjustment", "category": "Domain"},
     {"name": "Capitation", "category": "Domain"},
     {"name": "Bundled payments", "category": "Domain"},
-    {"name": "Price transparency (MRF data)", "category": "Domain"}
+    {"name": "Price transparency (MRF data)", "category": "Domain"},
+    {"name": "Actuarial modeling", "category": "Domain"},
+    {"name": "Trend analysis", "category": "Domain"},
+    {"name": "Spanish (B2)", "category": "Languages"},
+    {"name": "German (B1)", "category": "Languages"}
   ],
   "posts": [
     {"title": "Serendipity is what you do with luck", "url": "https://alexhalloran.substack.com/p/serendipity-is-what-you-do-with-luck"},

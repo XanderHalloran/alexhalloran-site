@@ -41,7 +41,7 @@
       inp = document.getElementById('db-in'), pane = document.getElementById('db');
   if (!out || !form || !inp) return;
 
-  var DB = null, TABLES = ['projects', 'roles', 'skills', 'posts'];
+  var DB = null, TABLES = ['projects', 'roles', 'education', 'skills', 'posts'];
   var HELP = [
     'bio.db — a read-only database about Alex.',
     '  help                    this list',
