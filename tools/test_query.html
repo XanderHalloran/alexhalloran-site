@@ -1,0 +1,67 @@
+<!doctype html>
+<!-- bio.db query-parser check. Serve the repo root and open /tools/test_query.html:
+     cd .. && python3 -m http.server 8000   ->   http://localhost:8000/tools/test_query.html
+     Green = every case passed. Not deployed (the workflow only rsyncs site/). -->
+<meta charset="utf-8">
+<title>bio.db check</title>
+<style>body{font:14px ui-monospace,monospace;padding:16px}.pass{color:#0a0}.fail{color:#c00;font-weight:700}</style>
+<h1 id="verdict">running…</h1>
+<ul id="log"></ul>
+
+<!-- the pane markup main.js expects -->
+<div id="db"><div id="db-out"></div><form id="db-form"><input id="db-in"></form></div>
+<script src="../site/assets/js/main.js"></script>
+<script>
+var CASES = [
+  // [query, substring that must appear in the output, substring that must NOT]
+  ['help', 'select <cols|*> from <table>', null],
+  ['.tables', 'projects  roles  skills  posts', null],
+  ['.schema roles', 'roles (org, title, sort_key)', null],
+  ['.schema nope', 'no such table: nope', null],
+  ['describe alex', 'Medical economics at HOPCo', null],
+  ['whoami', 'Medical economics at HOPCo', null],
+  ['select * from projects', 'Healthcare Price Transparency', null],
+  ['select name from projects', '(3 rows)', 'DuckDB'],
+  ["select name from skills where category = 'Domain'", 'HEDIS', 'Snowflake'],
+  ["select org from roles where org like '%health%'", 'OnBelay Health Solutions', 'HOPCo'],
+  ['select org from roles order by sort_key desc limit 1', 'ACO Partner', 'HOPCo'],
+  ['select title from posts limit 2', '(2 rows)', null],
+  ['select * from salaries', 'no such table: salaries', null],
+  ['select ssn from roles', 'no such column: ssn', null],
+  ['drop table roles', 'not a bio.db command', null],
+  ['select', 'syntax:', null]
+];
+function run(q) {
+  var out = document.getElementById('db-out');
+  out.textContent = '';
+  document.getElementById('db-in').value = q;
+  document.getElementById('db-form').dispatchEvent(new Event('submit', {cancelable: true}));
+  return out.textContent;
+}
+function check() {
+  var log = document.getElementById('log'), bad = 0;
+  CASES.forEach(function (c) {
+    var got = run(c[0]);
+    var ok = got.indexOf(c[1]) >= 0 && (!c[2] || got.indexOf(c[2]) < 0);
+    if (!ok) bad++;
+    var li = document.createElement('li');
+    li.className = ok ? 'pass' : 'fail';
+    li.textContent = (ok ? 'PASS  ' : 'FAIL  ') + c[0] + (ok ? '' : '   -> ' + got.replace(/\s+/g, ' ').slice(0, 160));
+    log.appendChild(li);
+  });
+  var v = document.getElementById('verdict');
+  v.textContent = bad ? bad + ' of ' + CASES.length + ' FAILED' : 'all ' + CASES.length + ' passed';
+  v.className = bad ? 'fail' : 'pass';
+}
+/* wait for main.js to finish loading bio.json */
+(function wait(n) {
+  if (document.getElementById('db-out').textContent.indexOf('could not load') >= 0) {
+    document.getElementById('verdict').textContent = 'FAILED: bio.json did not load (serve the repo root over http)';
+    document.getElementById('verdict').className = 'fail';
+    return;
+  }
+  if (run('.tables').indexOf('still loading') < 0) return check();
+  if (n > 60) { document.getElementById('verdict').textContent = 'FAILED: timed out loading bio.json'; document.getElementById('verdict').className = 'fail'; return; }
+  setTimeout(function () { wait(n + 1); }, 50);
+})(0);
+</script>

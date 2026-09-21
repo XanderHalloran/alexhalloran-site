@@ -13,10 +13,23 @@ Open http://localhost:8000. The `/#work` style anchors and `resume.html` both wo
 
 ## Layout
 
-- `site/index.html` — single page: hero + terminal, capabilities, selected work, references (hidden until filled), about + timeline, skills, writing, contact
+- `site/index.html` — single page: hero + bio.db pane, capabilities, selected work, references (hidden until filled), about + timeline, skills, writing, contact
 - `site/resume.html` — thin summary page; links to the PDF once it exists
-- `site/assets/css/main.css` — tokens (`--bg`, `--ink`, ...), light + dark themes
-- `site/assets/js/main.js` — theme toggle, mobile nav, terminal widget
+- `site/recommendations.html` — tools, hardware, supplements, books; referral links carry a `referral` pill
+- `site/assets/css/main.css` — design tokens. **Monsoon Night (dark) is the default**; the light set lives under `:root[data-theme="light"]` and is reached only through the nav toggle, which saves the choice in `localStorage`
+- `site/assets/js/main.js` — theme toggle, mobile nav, bio.db query pane
+- `site/assets/data/bio.json` — the data behind the pane: `projects`, `roles`, `skills`, `posts`, `bio`. Edit this to change what the pane returns; it is seeded from the page copy, so update both when a project or role changes
+- `tools/test_query.html` — checks the bio.db query parser (16 cases). Not deployed
+
+### bio.db pane
+
+The hero device is a read-only query pane, not a shell. It parses an allowlist against `bio.json` with no `eval`
+and no `Function()`: `help`, `.tables`, `.schema <table>`, `describe alex` (`whoami` is a synonym), `clear`, and
+`select <cols|*> from <table> [where col = 'x' | col like '%x%'] [order by col [asc|desc]] [limit n]`.
+One table per query, no joins. Anything else prints an error.
+
+To run the check: serve the repo root (`python3 -m http.server 8000`) and open
+`http://localhost:8000/tools/test_query.html`. Green heading means all cases passed.
 - `site/assets/img/headshot.jpg` — TODO, placeholder box shown until present
 - `site/assets/resume/Alex_Halloran_Resume.pdf` — TODO, "View resume" falls back to `resume.html`
 - `_old/` — the earlier dark single-file draft, kept for reference only

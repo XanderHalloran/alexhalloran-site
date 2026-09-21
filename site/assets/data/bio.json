@@ -1,0 +1,55 @@
+{
+  "projects": [
+    {"name": "Healthcare Price Transparency", "problem": "Hospital negotiated-rate files (MRF data) are huge and unusable for a patient or a small practice comparing prices.", "stack": "Python, DuckDB, Parquet, FastAPI", "url": "https://healthcare.traqqit.com"},
+    {"name": "Medical bill review automation", "problem": "Reviewing and negotiating medical bills is manual: read the bill, pull the codes, check them against expected rates, draft the dispute.", "stack": "n8n, OCR, Python", "url": ""},
+    {"name": "Digital signage for pickleball clubs", "problem": "Franchise locations need court schedules, league flyers, and hours on screens without staff managing content by hand.", "stack": "Yodeck, managed service", "url": ""}
+  ],
+  "roles": [
+    {"org": "HOPCo", "title": "Medical Economics Analyst", "sort_key": 1},
+    {"org": "Grand Canyon University", "title": "Adjunct Instructor, Health Informatics", "sort_key": 2},
+    {"org": "Data Hound Technologies", "title": "Founder", "sort_key": 3},
+    {"org": "Pickleball Kingdom", "title": "Technology Director", "sort_key": 4},
+    {"org": "OnBelay Health Solutions", "title": "Senior Business Analyst", "sort_key": 5},
+    {"org": "Equality Health", "title": "Population Health Analyst", "sort_key": 6},
+    {"org": "ACO Partner", "title": "Shared-savings financial modeling", "sort_key": 7}
+  ],
+  "skills": [
+    {"name": "SQL (T-SQL, PostgreSQL, MySQL)", "category": "Data"},
+    {"name": "Python", "category": "Data"},
+    {"name": "R", "category": "Data"},
+    {"name": "DAX", "category": "Data"},
+    {"name": "DuckDB", "category": "Data"},
+    {"name": "Parquet", "category": "Data"},
+    {"name": "SQL Server", "category": "Platforms"},
+    {"name": "Snowflake", "category": "Platforms"},
+    {"name": "Databricks", "category": "Platforms"},
+    {"name": "Epic Clarity / Caboodle", "category": "Platforms"},
+    {"name": "Power BI", "category": "Platforms"},
+    {"name": "Tableau", "category": "Platforms"},
+    {"name": "Flask", "category": "Build"},
+    {"name": "FastAPI", "category": "Build"},
+    {"name": "n8n", "category": "Build"},
+    {"name": "Docker", "category": "Build"},
+    {"name": "GitHub Actions", "category": "Build"},
+    {"name": "Raspberry Pi", "category": "Build"},
+    {"name": "Grafana", "category": "Build"},
+    {"name": "InfluxDB", "category": "Build"},
+    {"name": "ESPHome / MQTT", "category": "Build"},
+    {"name": "Tailscale", "category": "Build"},
+    {"name": "Cloudflare Tunnels", "category": "Build"},
+    {"name": "ACO / MSSP", "category": "Domain"},
+    {"name": "Medicare Advantage", "category": "Domain"},
+    {"name": "HEDIS", "category": "Domain"},
+    {"name": "Risk adjustment", "category": "Domain"},
+    {"name": "Capitation", "category": "Domain"},
+    {"name": "Bundled payments", "category": "Domain"},
+    {"name": "Price transparency (MRF data)", "category": "Domain"}
+  ],
+  "posts": [
+    {"title": "Serendipity is what you do with luck", "url": "https://alexhalloran.substack.com/p/serendipity-is-what-you-do-with-luck"},
+    {"title": "Greasing the Groove", "url": "https://alexhalloran.substack.com/p/greasing-the-groove"},
+    {"title": "From Casual Networking to Crypto Theft: My $187K Lesson", "url": "https://alexhalloran.substack.com/p/from-casual-networking-to-crypto"},
+    {"title": "2024 Year in Review", "url": "https://alexhalloran.substack.com/p/2024-year-in-review"}
+  ],
+  "bio": "Alex Halloran. Healthcare data analyst in Phoenix, AZ. Medical economics at HOPCo, a musculoskeletal value-based care company. Founder of Data Hound Technologies. Adjunct in graduate health informatics at Grand Canyon University. Mostly SQL, Python, and Power BI, mostly on claims."
+}

@@ -12,8 +12,7 @@
 <meta property="og:description" content="I turn messy healthcare data into numbers people can act on. Medical economics, value-based care, data engineering, and small useful software.">
 <meta property="og:site_name" content="Alex Halloran">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#f4efe6" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#14120f" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#141a1c">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script>/* set theme before first paint so there is no flash */
 try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
@@ -70,16 +69,16 @@ try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.docu
     </div>
   </div>
 
-  <div class="device" aria-label="Interactive terminal">
+  <div class="device" aria-label="bio.db query pane">
     <div class="device-bar">
       <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-      <span class="device-title">alex@traqqit ~</span>
+      <span class="device-title">alex@traqqit · bio.db</span>
     </div>
-    <div class="term" id="term">
-      <div class="term-out" id="term-out" aria-live="polite"></div>
-      <form class="term-line" id="term-form" autocomplete="off">
-        <label for="term-in" class="prompt">$ </label>
-        <input id="term-in" class="term-in" type="text" spellcheck="false" autocapitalize="off" aria-label="Terminal command, type help for a list">
+    <div class="db" id="db">
+      <div class="db-out" id="db-out" aria-live="polite"></div>
+      <form class="db-line" id="db-form" autocomplete="off">
+        <label for="db-in" class="prompt">sql&gt; </label>
+        <input id="db-in" class="db-in" type="text" spellcheck="false" autocapitalize="off" aria-label="Query bio.db, type help for the list of commands">
         <span class="cursor" aria-hidden="true"></span>
       </form>
     </div>
