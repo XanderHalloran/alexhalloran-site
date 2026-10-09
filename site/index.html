@@ -122,7 +122,7 @@ try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.docu
 
     <article class="card work">
       <h3><a href="https://healthcare.traqqit.com" rel="noopener">Healthcare Price Transparency</a></h3>
-      <p class="tag">Public hospital rate lookup · healthcare.traqqit.com</p>
+      <p class="tag">Public hospital rate lookup · <a href="https://healthcare.traqqit.com" rel="noopener">healthcare.traqqit.com</a></p>
       <dl>
         <dt>Problem</dt><dd>Hospital negotiated-rate files (machine-readable MRF data) are huge and unusable for a patient or a small practice trying to compare prices.</dd>
         <dt>Built</dt><dd>A DuckDB and Parquet pipeline that ingests and normalizes negotiated rates, with a FastAPI backend and a web front end for looking up rates by procedure and payer (initial focus: Anthem PPO).</dd>
