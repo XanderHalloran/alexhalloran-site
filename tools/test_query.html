@@ -10,13 +10,12 @@
 
 <!-- the pane markup main.js expects -->
 <div id="db"><div id="db-out"></div><form id="db-form"><input id="db-in"></form></div>
-<script src="../site/assets/js/biodb.js"></script>
 <script src="../site/assets/js/main.js"></script>
 <script>
 var CASES = [
   // [query, substring that must appear in the output, substring that must NOT]
   ['help', 'select * from skills where category = domain', null],
-  ['.tables', 'projects  roles  education  skills  posts  sources  contact', null],
+  ['.tables', 'projects  roles  education  skills  posts', null],
   ['.schema roles', 'roles (org, title, years, sort_key)', null],
   ['select school, degree from education', 'Arizona State University', null],
   ['.schema nope', 'there is no table called "nope"', null],
@@ -39,7 +38,7 @@ var CASES = [
   ['select org from roles order by sort_key desc limit 1', 'ACO Partner', 'HOPCo'],
   // plain words, for visitors who do not write sql
   ['projects', 'Healthcare Price Transparency', null],
-  ['show tables', 'projects  roles  education  skills  posts  sources  contact', null],
+  ['show tables', 'projects  roles  education  skills  posts', null],
   ['about', 'Medical economics at HOPCo', null],
   ['schema posts', 'posts (title, url)', null],
   ['list skills', '(35 rows)', null],
