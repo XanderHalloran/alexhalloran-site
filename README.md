@@ -17,7 +17,9 @@ Open http://localhost:8000. The `/#work` style anchors and `resume.html` both wo
 - `site/resume.html` — thin summary page; links to the PDF once it exists
 - `site/recommendations.html` — tools, hardware, supplements, books; referral links carry a `referral` pill
 - `site/assets/css/main.css` — design tokens. **Monsoon Night (dark) is the default**; the light set lives under `:root[data-theme="light"]` and is reached only through the nav toggle, which saves the choice in `localStorage`
+- `site/assets/js/biodb.js` — the bio.db query engine as a pure function (`BioDB.run(db, sql)`), no DOM and no eval. Both the hero pane and `/v2` run this one parser, so there is a single thing to trust and a single thing to check
 - `site/assets/js/main.js` — theme toggle, mobile nav, bio.db query pane
+- `site/v2/` — a scroll-driven rebuild of the front page, built with the scroll-craft skill. Unlisted and `noindex` while it is a candidate. See below
 - `site/assets/data/bio.json` — the data behind the pane: `projects`, `roles`, `skills`, `posts`, `bio`. Edit this to change what the pane returns; it is seeded from the page copy, so update both when a project or role changes
 - `tools/test_query.html` — checks the bio.db query parser (16 cases). Not deployed
 
@@ -37,6 +39,34 @@ joins, no writes. Anything else prints a plain-language error naming the tables 
 
 To run the check: serve the repo root (`python3 -m http.server 8000`) and open
 `http://localhost:8000/tools/test_query.html`. Green heading means all 29 cases passed.
+
+### /v2 — the scroll surface
+
+A second front page at `site/v2/`, built with the scroll-craft skill. It is a
+**live surface**: a read-only database client over the same `bio.json`, where
+scroll position is the query cursor. Each act carries a `data-q`; act progress
+types that query into the persistent prompt a character at a time, finishing it
+runs it, and scrolling back up un-types it. At the peak the prompt hands over and
+the visitor can type their own. `scrollcraft.js` and `scrollcraft.css` are the
+skill's engine, copied in and never edited; `page.js` is this page's own code.
+
+It is `noindex` and not linked from the plain site. The brief, the score, the
+feeling curve and the verification notes are in
+`scrollcraft/builds/alexhalloran/BRIEF.md`.
+
+To check it (needs `npm i playwright-core` once, at the repo root):
+
+```
+cd site && python3 -m http.server 8801
+SCROLLCRAFT_CHROME="<path to chrome or msedge>" node tools/check_v2.mjs
+```
+
+15 end-to-end assertions; exits non-zero on any failure. The scrollcraft scroll
+harness is a separate pass:
+
+```
+node <skill>/scripts/shoot.mjs --url http://localhost:8801/v2/ --out scrollcraft/builds/alexhalloran/lab/desktop
+```
 - `site/assets/img/headshot.jpg` — TODO, placeholder box shown until present
 - `site/assets/resume/Alex_Halloran_Resume.pdf` — TODO, "View resume" falls back to `resume.html`
 - `_old/` — the earlier dark single-file draft, kept for reference only
