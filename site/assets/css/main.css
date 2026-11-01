@@ -1,7 +1,7 @@
 /* alexhalloran.traqqit.com — Monsoon Night by default; light theme behind the toggle */
 :root {
   --bg: #141a1c; --bg-elev: #1c2428; --ink: #e8eef0; --ink-muted: #8b9aa0;
-  --line: #2f3c42; --accent: #d4a373; --accent-ink: #141a1c;
+  --line: #2f3c42; --line-ui: #5f696d; --accent: #d4a373; --accent-ink: #141a1c;
   --head: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
   --mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -10,7 +10,7 @@
 }
 :root[data-theme="light"] {
   --bg: #eef3f4; --bg-elev: #f7fafb; --ink: #141a1c; --ink-muted: #5c6b70;
-  --line: #c5d0d4; --accent: #9a6b45; --accent-ink: #f7fafb; color-scheme: light;
+  --line: #c5d0d4; --line-ui: #838a8d; --accent: #9a6b45; --accent-ink: #f7fafb; color-scheme: light;
 }
 /* toggle icon: show the one you would switch TO */
 .moon { display: none; }
@@ -49,7 +49,7 @@ code { font-family: var(--mono); font-size: 0.9em; }
 .nav-links a { text-decoration: none; font-size: 15px; font-weight: 500; }
 .nav-links a:hover, .nav-links a[aria-current] { text-decoration: underline; text-underline-offset: 6px; }
 .theme-toggle, .nav-toggle { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0;
-  background: var(--bg-elev); color: var(--ink); border: 1px solid var(--line); border-radius: var(--r); cursor: pointer; }
+  background: var(--bg-elev); color: var(--ink); border: 1px solid var(--line-ui); border-radius: var(--r); cursor: pointer; }
 .theme-toggle:hover { border-color: var(--ink-muted); }
 .nav-toggle { display: none; flex-direction: column; gap: 4px; }
 .nav-toggle span { display: block; width: 16px; height: 2px; background: currentColor; }
@@ -62,7 +62,7 @@ code { font-family: var(--mono); font-size: 0.9em; }
 }
 
 /* buttons */
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border: 1px solid var(--line); border-radius: var(--r);
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border: 1px solid var(--line-ui); border-radius: var(--r);
   font-weight: 500; font-size: 16px; text-decoration: none; line-height: 1.2; cursor: pointer; transition: background .12s, color .12s; }
 .btn-primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 .btn-primary:hover { filter: brightness(1.08); }
@@ -160,7 +160,7 @@ code { font-family: var(--mono); font-size: 0.9em; }
 .subscribe label { display: block; font-family: var(--head); font-weight: 500; margin-bottom: 8px; }
 .subscribe-row { display: flex; gap: 8px; flex-wrap: wrap; }
 .subscribe input { flex: 1 1 220px; min-width: 0; padding: 12px 14px; font: inherit; font-size: 16px; color: var(--ink);
-  background: var(--bg-elev); border: 1px solid var(--line); border-radius: var(--r); }
+  background: var(--bg-elev); border: 1px solid var(--line-ui); border-radius: var(--r); }
 .subscribe input::placeholder { color: var(--ink-muted); }
 .subscribe .note { margin-top: 12px; }
 
@@ -178,3 +178,4 @@ code { font-family: var(--mono); font-size: 0.9em; }
 /* footer */
 .footer { border-top: 1px solid var(--line); padding-block: 24px; font-size: 14px; color: var(--ink-muted); }
 .footer-in { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.footer a { display: inline-block; padding: 4px 0; min-height: 24px; }
